@@ -11,7 +11,8 @@ My workflow is to only rely on this script to *update* the archives: I always do
 
 This can be easily added as a systemd service:
 
-```[Unit]
+```
+[Unit]
 Description=Runs youtube archiver
 Wants=youtube-archiver.timer
 
@@ -23,7 +24,8 @@ WorkingDirectory=$clone-location
 WantedBy=multi-user.target
 ```
 
-```[Unit]
+```
+[Unit]
 Description=Runs youtube archiver every 24 hours
 Requires=youtube-archiver.service
 
@@ -33,5 +35,6 @@ OnBootSec=15min
 OnUnitInactiveSec=24h
 
 [Install]
-WantedBy=timers.target```
+WantedBy=timers.target
+```
 
